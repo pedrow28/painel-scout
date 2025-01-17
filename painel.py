@@ -245,6 +245,26 @@ radar_stats = [key for key, value in stats_translation.items() if value in radar
 scatter_x = [key for key, value in stats_translation.items() if value == scatter_x_translated][0]
 scatter_y = [key for key, value in stats_translation.items() if value == scatter_y_translated][0]
 
+# Introdução ao painel
+st.markdown(
+    """
+    ## Bem-vindo ao Painel de Scout de Jogadores 🎯
+    
+    Este painel foi desenvolvido para ajudar na análise detalhada de jogadores de futebol, permitindo que você filtre, compare e visualize dados de desempenho com base em critérios personalizados, como idade, valor de mercado, posição e estatísticas específicas.
+
+    ### Como Utilizar:
+    - Selecione os **parâmetros desejados** no menu lateral, como posição, idade, valor de mercado e estatísticas de desempenho.
+    - Clique no botão **"Buscar"** para visualizar os resultados na tabela interativa.
+    - Explore os gráficos de radar e dispersão para uma análise visual dos dados.
+
+    Todas as informações apresentadas são provenientes do **SofaScore**, uma referência global em estatísticas e dados esportivos.
+
+    ---
+    """
+)
+
+
+
 # Botão para buscar jogadores
 if st.sidebar.button("Buscar"):
     with st.spinner("Carregando dados..."):
@@ -269,3 +289,18 @@ if st.sidebar.button("Buscar"):
             st.warning("Nenhum jogador encontrado para os parâmetros selecionados.")
 
 
+# Rodapé com ícones e formatação
+st.markdown(
+    """
+    <div style='text-align: center; font-size: 14px; margin-top: 30px;'>
+        Desenvolvido por <b>Pedro William Ribeiro Diniz</b> |
+        <a href="https://github.com/seu-github" target="_blank" style="text-decoration: none;">
+            <img src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" style="vertical-align: middle;">
+        </a>
+        <a href="https://www.linkedin.com/in/seu-linkedin/" target="_blank" style="text-decoration: none; margin-left: 10px;">
+            <img src="https://img.icons8.com/ios-glyphs/30/linkedin.png" alt="LinkedIn" style="vertical-align: middle;">
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
